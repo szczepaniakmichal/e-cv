@@ -1,15 +1,19 @@
 :root {
   --img-size: 120px;
+  --border-size: 2px;
   --base-green: #2dde00;
+  --base-black: #000;
 }
 
 body {
   .container {
     margin-top: 50px;
     padding: 30px;
+    background-color: #fafafa;
     -webkit-box-shadow: 0px 0px 20px 12px rgba(0,0,0,0.23);
     -moz-box-shadow: 0px 0px 20px 12px rgba(0,0,0,0.23);
     box-shadow: 0px 0px 20px 12px rgba(0,0,0,0.23);
+
 
     .header {
       .full_name {
@@ -29,4 +33,38 @@ body {
       }
     }
   }
+
+  .content {
+    margin-top: 60px;
+    .sub_header{
+      margin-top: 20px;
+      span {
+        padding: 10px;
+
+        //&:nth-child(2) {
+        //  padding-left: 0;
+        //}
+      }
+
+      .text-uppercase {
+        border-bottom: var(--base-black) solid var(--border-size);
+      }
+    }
+  }
+
+  a {
+    text-underline: none;
+    color: var(--base-black);
+
+    &:hover {
+      text-underline: none;
+      color: var(--base-green);
+      transition: 0.5s;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+  }
 }
+
