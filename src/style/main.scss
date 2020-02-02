@@ -1,3 +1,32 @@
+:root {
+  --img-size: 120px;
+  --base-green: #2dde00;
+}
+
 body {
-  background-color: greenyellow;
+  .container {
+    margin-top: 50px;
+    padding: 30px;
+    -webkit-box-shadow: 0px 0px 20px 12px rgba(0,0,0,0.23);
+    -moz-box-shadow: 0px 0px 20px 12px rgba(0,0,0,0.23);
+    box-shadow: 0px 0px 20px 12px rgba(0,0,0,0.23);
+
+    .header {
+      .full_name {
+
+      }
+
+      .profession {
+        color: var(--base-green);
+      }
+
+      .foto_profile {
+        width: var(--img-size);
+        height: var(--img-size);
+        border-radius: var(--img-size);
+        background-image: url("/images/_profilowe.jpg");
+        background-position: center;
+      }
+    }
+  }
 }
