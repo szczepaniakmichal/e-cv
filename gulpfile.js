@@ -21,9 +21,9 @@ const config = {
         html: './src/*.html'
     },
     dist: {
-        base: './dist/',
-        fonts: './dist/fonts',
-        images: './dist/images'
+        base: './',
+        fonts: './',
+        images: './'
     }
 }
 
