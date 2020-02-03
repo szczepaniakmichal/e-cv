@@ -28,7 +28,7 @@ body {
         width: var(--img-size);
         height: var(--img-size);
         border-radius: var(--img-size);
-        background-image: url("/images/_profilowe.jpg");
+        background-image: url("./_profilowe.jpg");
         background-position: center;
       }
     }
@@ -40,10 +40,6 @@ body {
       margin-top: 20px;
       span {
         padding: 10px;
-
-        //&:nth-child(2) {
-        //  padding-left: 0;
-        //}
       }
 
       .text-uppercase {
