@@ -3,6 +3,7 @@
   --border-size: 2px;
   --base-green: #2dde00;
   --base-black: #000;
+  --transitionTime: 0.5s;
 }
 
 body {
@@ -38,12 +39,27 @@ body {
     margin-top: 60px;
     .sub_header{
       margin-top: 20px;
-      span {
-        padding: 10px;
+
+      ul {
+        display: none;
+
+        li {
+          display: none;
+          animation: fadeIn 1s;
+
+          &:hover {
+            color: var(--base-green);
+          }
+        }
       }
 
       .text-uppercase {
         border-bottom: var(--base-black) solid var(--border-size);
+        transition: var(--transitionTime);
+
+        &:hover {
+          color: var(--base-green);
+        }
       }
     }
   }
@@ -62,5 +78,10 @@ body {
   ul {
     list-style-type: none;
   }
+}
+
+@-webkit-keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
