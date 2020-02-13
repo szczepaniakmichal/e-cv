@@ -2,6 +2,10 @@ const allHeaders = document.querySelectorAll(".sub_header > h3"); //pobranie wsz
 const allList = document.querySelectorAll(".sub_header > ul"); //pobranie list
 const allListItem = document.querySelectorAll(".sub_header > ul > li"); //pobranie wszystkich elementow li
 
+for (const liItem of allListItem) {
+    liItem.style.display = 'none';
+}
+
 allHeaders.forEach((el) => {
     el.addEventListener('click', (e) => {
         allList.forEach((el) => {
