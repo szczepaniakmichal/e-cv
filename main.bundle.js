@@ -38,6 +38,14 @@ try {
   }
 }
 
+function renderItems(currentListChild) {
+  currentListChild.forEach(function (el, index) {
+    setTimeout(function () {
+      el.style.display = 'block';
+    }, index * 300);
+  });
+}
+
 allHeaders.forEach(function (el) {
   el.addEventListener('click', function (e) {
     allList.forEach(function (el) {
@@ -51,16 +59,7 @@ allHeaders.forEach(function (el) {
     allListItem.forEach(function (el) {
       el.style.display = 'none';
     });
-
-    function renderItems() {
-      currentListChild.forEach(function (el, index) {
-        setTimeout(function () {
-          el.style.display = 'block';
-        }, index * 300);
-      });
-    }
-
-    renderItems();
+    renderItems(currentListChild);
   });
 });
 var startWork = new Date('2019-07-01 00:00:00').getTime();

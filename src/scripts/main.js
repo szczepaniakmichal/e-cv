@@ -6,6 +6,14 @@ for (const liItem of allListItem) {
     liItem.style.display = 'none';
 }
 
+function renderItems(currentListChild) {
+    currentListChild.forEach((el, index) => {
+        setTimeout(() => {
+            el.style.display = 'block';
+        }, index * 300)
+    })
+}
+
 allHeaders.forEach((el) => {
     el.addEventListener('click', (e) => {
         allList.forEach((el) => {
@@ -19,15 +27,7 @@ allHeaders.forEach((el) => {
             el.style.display = 'none';
         });
 
-        function renderItems() {
-            currentListChild.forEach((el, index) => {
-                setTimeout(() => {
-                    el.style.display = 'block';
-                }, index * 300)
-            })
-        }
-
-        renderItems();
+        renderItems(currentListChild);
     })
 });
 
