@@ -62,14 +62,19 @@ allHeaders.forEach(function (el) {
     renderItems(currentListChild);
   });
 });
-var startWork = new Date('2019-07-01 00:00:00').getTime();
-var elDate = document.querySelector("body > div > div.row.content > div > div:nth-child(2) > div.col-md-12.col-lg-7.sub_header > ul > li:nth-child(3) > span");
+var nowTime = new Date().getTime();
+var startLern = new Date('2016-09-12 00:00:00').getTime();
+var startInspireLabs = new Date('2019-07-01 00:00:00').getTime();
+var elStartLern = document.querySelector("ul.experience > li:nth-child(1) > .date");
+var elInspireLabs = document.querySelector("ul.experience > li:nth-child(4) > .date");
 
-function howManyMonth() {
-  var nowTime = new Date().getTime();
-  var howMuchMonth = Math.floor(nowTime / (1000 * 60 * 60 * 24 * 30) - startWork / (1000 * 60 * 60 * 24 * 30));
-  elDate.textContent = "obecnie pracuje ".concat(howMuchMonth, " miesi\u0119cy");
-  return howMuchMonth;
+function experience(nowTime, currentWork, outputSelector) {
+  var experience = Math.floor(nowTime / (1000 * 60 * 60 * 24 * 30) - currentWork / (1000 * 60 * 60 * 24 * 30));
+  var year = Math.floor(experience / 12);
+  var month = experience % 12;
+  outputSelector.textContent = "doswiadczenie ".concat(year, " rok i ").concat(month, " miesi\u0105c");
+  return experience;
 }
 
-howManyMonth();
+experience(nowTime, startLern, elStartLern);
+experience(nowTime, startInspireLabs, elInspireLabs);
