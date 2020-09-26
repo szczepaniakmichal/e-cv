@@ -16,17 +16,12 @@ function renderItems(currentListChild) {
 
 allHeaders.forEach((el) => {
     el.addEventListener('click', (e) => {
-        // allList.forEach((el) => {
-        //     el.style.display = 'none';
-        // });
-
         e.target.nextElementSibling.style.display = 'block';
         const currentList = e.target.nextElementSibling;
         const currentListChild = [...currentList.children];
         allListItem.forEach(el => {
             el.style.display = 'none';
         });
-
         renderItems(currentListChild);
     })
 });

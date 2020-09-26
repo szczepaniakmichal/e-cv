@@ -48,9 +48,6 @@ function renderItems(currentListChild) {
 
 allHeaders.forEach(function (el) {
   el.addEventListener('click', function (e) {
-    allList.forEach(function (el) {
-      el.style.display = 'none';
-    });
     e.target.nextElementSibling.style.display = 'block';
     var currentList = e.target.nextElementSibling;
 
