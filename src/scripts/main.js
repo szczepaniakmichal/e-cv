@@ -31,8 +31,8 @@ const nowTime = new Date().getTime();
 const startLern = new Date('2016-09-12 00:00:00').getTime();
 const startInspireLabs = new Date('2019-07-01 00:00:00').getTime();
 
-const elStartLern = document.querySelector("ul.experience > li:nth-child(1) > .date");
-const elInspireLabs = document.querySelector("ul.experience > li:nth-child(4) > .date");
+const elStartLern = document.querySelector(".experience .start-lern .date");
+const elInspireLabs = document.querySelector(".experience .inspire .date");
 
 function experience(nowTime, currentWork, outputSelector) {
     const experience = Math.floor((nowTime / (1000 * 60 * 60 * 24 * 30)) - (currentWork / (1000 * 60 * 60 * 24 * 30)));
