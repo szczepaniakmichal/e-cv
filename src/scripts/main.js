@@ -2,6 +2,9 @@ const allHeaders = document.querySelectorAll(".sub_header > h3"); //pobranie wsz
 const allList = document.querySelectorAll(".sub_header > ul"); //pobranie list
 const allListItem = document.querySelectorAll(".sub_header > ul > li"); //pobranie wszystkich elementow li
 
+let showingItems = false;
+const displayTime = 300;
+
 for (const liItem of allListItem) {
     liItem.style.display = 'none';
 }
@@ -10,12 +13,18 @@ function renderItems(currentListChild) {
     currentListChild.forEach((el, index) => {
         setTimeout(() => {
             el.style.display = 'block';
-        }, index * 300)
+        }, index * displayTime)
+
+        setTimeout(() => {
+            showingItems = false;
+        }, currentListChild.length * displayTime);
     })
 }
 
 allHeaders.forEach((el) => {
     el.addEventListener('click', (e) => {
+        if (showingItems) return;
+        showingItems = true;
         e.target.nextElementSibling.style.display = 'block';
         const currentList = e.target.nextElementSibling;
         const currentListChild = [...currentList.children];

@@ -14,6 +14,8 @@ var allList = document.querySelectorAll(".sub_header > ul"); //pobranie list
 
 var allListItem = document.querySelectorAll(".sub_header > ul > li"); //pobranie wszystkich elementow li
 
+var showingItems = false;
+var displayTime = 300;
 var _iteratorNormalCompletion = true;
 var _didIteratorError = false;
 var _iteratorError = undefined;
@@ -42,12 +44,17 @@ function renderItems(currentListChild) {
   currentListChild.forEach(function (el, index) {
     setTimeout(function () {
       el.style.display = 'block';
-    }, index * 300);
+    }, index * displayTime);
+    setTimeout(function () {
+      showingItems = false;
+    }, currentListChild.length * displayTime);
   });
 }
 
 allHeaders.forEach(function (el) {
   el.addEventListener('click', function (e) {
+    if (showingItems) return;
+    showingItems = true;
     e.target.nextElementSibling.style.display = 'block';
     var currentList = e.target.nextElementSibling;
 
@@ -62,8 +69,8 @@ allHeaders.forEach(function (el) {
 var nowTime = new Date().getTime();
 var startLern = new Date('2016-09-12 00:00:00').getTime();
 var startInspireLabs = new Date('2019-07-01 00:00:00').getTime();
-var elStartLern = document.querySelector("ul.experience > li:nth-child(1) > .date");
-var elInspireLabs = document.querySelector("ul.experience > li:nth-child(4) > .date");
+var elStartLern = document.querySelector(".experience .start-lern .date");
+var elInspireLabs = document.querySelector(".experience .inspire .date");
 
 function experience(nowTime, currentWork, outputSelector) {
   var experience = Math.floor(nowTime / (1000 * 60 * 60 * 24 * 30) - currentWork / (1000 * 60 * 60 * 24 * 30));
