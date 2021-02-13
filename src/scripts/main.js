@@ -34,7 +34,7 @@ function experience(nowTime, currentWork, outputSelector) {
     const experience = Math.floor((nowTime / (1000 * 60 * 60 * 24 * 30)) - (currentWork / (1000 * 60 * 60 * 24 * 30)));
     let year = Math.floor(experience / 12);
     let month = experience % 12;
-    outputSelector.textContent = `doswiadczenie ${year} rok i ${month} miesiąc`;
+    outputSelector.textContent = `doświadczenie ${year}. rok i ${month}. miesiąc`;
     return experience;
 }
 

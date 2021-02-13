@@ -20,7 +20,6 @@ body {
     -moz-box-shadow: 0 0 20px 12px rgba(0,0,0,0.23);
     box-shadow: 0 0 20px 12px rgba(0,0,0,0.23);
 
-
     .header {
       .profession {
         color: var(--base-green);
@@ -32,27 +31,38 @@ body {
         border-radius: var(--img-size);
         background-position: center;
       }
+
+      .contact {
+        p.link {
+          &:hover {
+            animation-name: left-right;
+            animation-duration: 1s;
+          }
+        }
+      }
     }
   }
 
   .content {
-    margin-top: 60px;
+    margin-top: 30px;
     .sub_header{
       margin-top: 20px;
 
       ul {
-        //display: none;
-
         li {
-          animation: fadeIn 1s;
-          transition: var(--transitionTime);
-
           span.date {
             color: var(--base-green);
           }
 
           a {
             text-decoration: none;
+          }
+
+          &.link {
+            &:hover {
+              animation-name: left-right;
+              animation-duration: 1s;
+            }
           }
         }
       }
@@ -84,4 +94,14 @@ body {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+@keyframes left-right {
+  0% { transform: translateX(0) }
+  20% { transform: translateX(10px) }
+  40% { transform: translateX(-10px) }
+  60% { transform: translateX(10px) }
+  100% { transform: translateX(0) }
+
+}
+
 
