@@ -45,7 +45,8 @@ body {
 
   .content {
     margin-top: 30px;
-    .sub_header{
+
+    .sub_header {
       margin-top: 20px;
 
       ul {
@@ -71,6 +72,12 @@ body {
         color: var(--base-green);
         border-bottom: var(--base-gray) solid var(--border-size);
         transition: var(--transitionTime);
+      }
+
+      .skills {
+        li:first-letter {
+          text-transform: capitalize;
+        }
       }
     }
   }
