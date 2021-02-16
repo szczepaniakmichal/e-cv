@@ -63,7 +63,7 @@ function experience(nowTime, currentWork, outputSelector) {
   var experience = Math.floor(nowTime / (1000 * 60 * 60 * 24 * 30) - currentWork / (1000 * 60 * 60 * 24 * 30));
   var year = Math.floor(experience / 12);
   var month = experience % 12;
-  outputSelector.textContent = "doswiadczenie ".concat(year, " rok i ").concat(month, " miesi\u0105c");
+  outputSelector.textContent = "do\u015Bwiadczenie ".concat(year, ". rok i ").concat(month, ". miesi\u0105c");
   return experience;
 }
 
