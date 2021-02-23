@@ -38,17 +38,17 @@ function experience(nowTime, currentWork, outputSelector) {
     return experience;
 }
 
-allHeaders.forEach((el) => {
-    el.addEventListener('click', (e) => {
-        if (showingItems) return;
-        showingItems = true;
-        e.target.nextElementSibling.style.display = 'block';
-        const currentList = e.target.nextElementSibling;
-        const currentListChild = [...currentList.children];
-        hideListItems();
-        renderItems(currentListChild);
-    })
-});
+// allHeaders.forEach((el) => {
+//     el.addEventListener('click', (e) => {
+//         if (showingItems) return;
+//         showingItems = true;
+//         e.target.nextElementSibling.style.display = 'block';
+//         const currentList = e.target.nextElementSibling;
+//         const currentListChild = [...currentList.children];
+//         hideListItems();
+//         renderItems(currentListChild);
+//     })
+// });
 
 experience(nowTime, startLearn, elStartLearn);
 experience(nowTime, startInspireLabs, elInspireLabs);

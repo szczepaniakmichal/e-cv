@@ -1,13 +1,5 @@
 "use strict";
 
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
-
-function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
-
 var allHeaders = document.querySelectorAll(".sub_header > h3"); //get all title headers
 
 var allList = document.querySelectorAll(".sub_header > ul"); //get list
@@ -65,20 +57,18 @@ function experience(nowTime, currentWork, outputSelector) {
   var month = experience % 12;
   outputSelector.textContent = "do\u015Bwiadczenie ".concat(year, ". rok i ").concat(month, ". miesi\u0105c");
   return experience;
-}
+} // allHeaders.forEach((el) => {
+//     el.addEventListener('click', (e) => {
+//         if (showingItems) return;
+//         showingItems = true;
+//         e.target.nextElementSibling.style.display = 'block';
+//         const currentList = e.target.nextElementSibling;
+//         const currentListChild = [...currentList.children];
+//         hideListItems();
+//         renderItems(currentListChild);
+//     })
+// });
 
-allHeaders.forEach(function (el) {
-  el.addEventListener('click', function (e) {
-    if (showingItems) return;
-    showingItems = true;
-    e.target.nextElementSibling.style.display = 'block';
-    var currentList = e.target.nextElementSibling;
 
-    var currentListChild = _toConsumableArray(currentList.children);
-
-    hideListItems();
-    renderItems(currentListChild);
-  });
-});
 experience(nowTime, startLearn, elStartLearn);
 experience(nowTime, startInspireLabs, elInspireLabs);
