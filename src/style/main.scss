@@ -37,6 +37,7 @@ body {
           &:hover {
             animation-name: left-right;
             animation-duration: 1s;
+            color: var(--base-green);
           }
         }
       }
@@ -60,6 +61,7 @@ body {
           }
 
           &.link {
+            margin-bottom: 5px;
             &:hover {
               animation-name: left-right;
               animation-duration: 1s;
@@ -84,16 +86,23 @@ body {
 
   a {
     color: var(--base-black);
+    display: flex;
 
     &:hover {
       text-underline: none;
       color: var(--base-green);
       transition: var(--transitionTime);
+      text-decoration: none;
     }
   }
 
   ul {
     list-style-type: none;
+  }
+
+  i {
+    margin-right: 10px;
+    font-size: 20px;
   }
 }
 
